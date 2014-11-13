@@ -1,8 +1,8 @@
 require 'formula'
 
 class MyEmacs < Formula
+  homepage 'https://github.com/n0ts/homebrew-myformula'
   url 'http://ftp.gnu.org/pub/gnu/emacs/emacs-24.3.tar.gz'
-  homepage ''
   sha256 '0098ca3204813d69cd8412045ba33e8701fa2062f4bff56bedafc064979eef41'
 
   conflicts_with "emacs"
