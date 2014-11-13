@@ -1,58 +1,18 @@
-require "#{ENV['HOMEBREW_ROOT']}/Library/Taps/homebrew/homebrew-php/Abstract/abstract-php.rb"
+require 'formula'
 
-class MyPhp56 < AbstractPhp
-  init
-  include AbstractPhpVersion::Php56Defs
+class MyPhp56 < Formula
+  homepage 'https://github.com/n0ts/homebrew-myformula'
+  url 'https://github.com/n0ts/homebrew-myformula/blob/master/my-php56.rb'
+  version 'latest'
 
-  url     PHP_SRC_TARBALL
-  sha256  PHP_CHECKSUM[:sha256]
-  version PHP_VERSION
+  depends_on 'php56' => ['--with-apache', '--with-pgsql']
+  depends_on 'php56-msgpack'
+  depends_on 'php56-redis'
 
-  head    PHP_GITHUB_URL, :branch => PHP_BRANCH
-
-  # Leopard requires Hombrew OpenSSL to build correctly
-  depends_on 'openssl' if MacOS.version == :leopard
-
-  ##
-  conflicts_with "php56"
-
-  depends_on 'postgresql'
-
-  def install_args
-    args = super
-    args << "--with-homebrew-openssl" if MacOS.version == :leopard
-    args << "--enable-zend-signals"
-    args << "--enable-dtrace" if build.without? 'phpdbg'
-    # dtrace is not compatible with phpdbg: https://github.com/krakjoe/phpdbg/issues/38
-    if build.without? 'phpdbg'
-      args << "--disable-phpdbg"
-    else
-      args << "--enable-phpdbg"
-      if build.with? 'debug'
-        args << "--enable-phpdbg-debug"
-      end
-    end
-    if build.include? 'disable-opcache'
-      args << "--disable-opcache"
-    else
-      args << "--enable-opcache"
-    end
-
-    ##
-    args << "--with-pgsql=#{Formula['postgresql'].opt_prefix}"
-    args << "--with-pdo-pgsql=#{Formula['postgresql'].opt_prefix}"
-    args << "--with-xsl=" + Formula['libxslt'].opt_prefix.to_s
+  def install
+    # nothing to be installed.
   end
 
-  def php_version
-    5.6
-  end
-
-  def php_version_path
-    56
-  end
-
-  ##
   def post_install
     FileUtils.copy(config_path+"php.ini", config_path+"php-default.ini") unless File.exist? config_path+"php-default.ini"
 
@@ -96,5 +56,13 @@ default_charset = "UTF-8"
 EOS
       end
     end
+  end
+
+  def config_path
+    etc+"php/"+php_version.to_s
+  end
+
+  def php_version
+    5.6
   end
 end
