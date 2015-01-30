@@ -10,8 +10,10 @@ class MyPhp56 < Formula
   depends_on 'php56-mecab'
   depends_on 'php56-memcached'
   depends_on 'php56-msgpack'
+  depends_on 'php56-propro'
   depends_on 'php56-qr'
   depends_on 'php56-redis'
+  depends_on 'php56-raphf'
 
   def install
     # nothing to be installed.
