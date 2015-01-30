@@ -6,7 +6,11 @@ class MyPhp56 < Formula
   version 'latest'
 
   depends_on 'php56' => ['--with-apache', '--with-pgsql']
+  depends_on 'php56-mcrypt'
+  depends_on 'php56-mecab'
+  depends_on 'php56-memcached'
   depends_on 'php56-msgpack'
+  depends_on 'php56-qr'
   depends_on 'php56-redis'
 
   def install
