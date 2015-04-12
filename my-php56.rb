@@ -5,15 +5,16 @@ class MyPhp56 < Formula
   url 'https://github.com/n0ts/homebrew-myformula/blob/master/my-php56.rb'
   version 'latest'
 
-  depends_on 'php56' => ['--with-apache', '--with-pgsql']
+  depends_on 'php56' => ['--without-apache', '--with-fpm', '--with-mysql', '--with-pgsql']
+  depends_on 'php56-imagick'
   depends_on 'php56-mcrypt'
   depends_on 'php56-mecab'
   depends_on 'php56-memcached'
   depends_on 'php56-msgpack'
   depends_on 'php56-propro'
   depends_on 'php56-qr'
-  depends_on 'php56-redis'
   depends_on 'php56-raphf'
+  depends_on 'php56-redis'
 
   def install
     # nothing to be installed.
