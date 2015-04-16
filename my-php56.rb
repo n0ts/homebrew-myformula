@@ -5,7 +5,7 @@ class MyPhp56 < Formula
   url 'https://github.com/n0ts/homebrew-myformula/blob/master/my-php56.rb'
   version 'latest'
 
-  depends_on 'php56' => ['--without-apache', '--with-fpm', '--with-mysql', '--with-pgsql']
+  depends_on 'php56' => ['--without-apache', '--with-fpm', '--with-mysql', '--with-postgresql']
   depends_on 'php56-imagick'
   depends_on 'php56-mcrypt'
   depends_on 'php56-mecab'
