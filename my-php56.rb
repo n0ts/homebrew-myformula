@@ -16,6 +16,7 @@ class MyPhp56 < Formula
   depends_on 'php56-qr'
   depends_on 'php56-raphf'
   depends_on 'php56-redis'
+  depends_on 'php56-tidy'
 
   def install
     # nothing to be installed.
