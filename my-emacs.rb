@@ -1,5 +1,3 @@
-require 'formula'
-
 class MyEmacs < Formula
   homepage 'https://github.com/n0ts/homebrew-myformula'
   url 'http://ftp.gnu.org/pub/gnu/emacs/emacs-24.3.tar.gz'

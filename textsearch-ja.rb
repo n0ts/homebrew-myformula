@@ -1,5 +1,3 @@
-require 'formula'
-
 class TextsearchJa < Formula
   homepage 'http://textsearch-ja.projects.pgfoundry.org/textsearch_ja.html'
   head 'https://github.com/oknj/textsearch_ja.git'
