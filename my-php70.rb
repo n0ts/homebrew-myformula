@@ -1,21 +1,20 @@
-class MyPhp56 < Formula
+class MyPhp70 < Formula
   homepage 'https://github.com/n0ts/homebrew-myformula'
   url 'https://raw.githubusercontent.com/n0ts/homebrew-myformula/master/README.md'
   version '1.0'
   sha256 'c8ede39a6eb0f919c65ff0a653d84e051a6be5abb4048d1f35628da2191d31e5'
 
-  depends_on 'php56' => ['--without-apache', '--with-fpm', '--with-mysql', '--with-postgresql']
-  depends_on 'php56-imagick'
-  depends_on 'php56-mcrypt'
-  depends_on 'php56-mecab'
-  depends_on 'php56-memcached'
-  depends_on 'php56-msgpack'
-  depends_on 'php56-pdo-pgsql'
-  depends_on 'php56-propro'
-  depends_on 'php56-qr'
-  depends_on 'php56-raphf'
-  depends_on 'php56-redis'
-  depends_on 'php56-tidy'
+  depends_on 'php70' => ['--without-apache', '--with-fpm', '--with-postgresql']
+  depends_on 'php70-imagick'
+  depends_on 'php70-mcrypt'
+  depends_on 'php70-mecab'
+  depends_on 'php70-memcached'
+  depends_on 'php70-msgpack'
+  depends_on 'php70-pdo-pgsql'
+  ## TODO FIX support php 7.0
+##  depends_on 'php70-qr'
+  depends_on 'php70-redis'
+  depends_on 'php70-tidy'
 
   def install
     # nothing to be installed. (dummy)
@@ -72,6 +71,6 @@ EOS
   end
 
   def php_version
-    5.6
+    7.0
   end
 end
