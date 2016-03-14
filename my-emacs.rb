@@ -1,22 +1,17 @@
 class MyEmacs < Formula
-  homepage 'https://github.com/n0ts/homebrew-myformula'
-  url 'http://ftp.gnu.org/pub/gnu/emacs/emacs-24.3.tar.gz'
-  sha256 '0098ca3204813d69cd8412045ba33e8701fa2062f4bff56bedafc064979eef41'
+  homepage "https://github.com/n0ts/homebrew-myformula"
+  url "http://ftp.gnu.org/pub/gnu/emacs/emacs-24.5.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz"
+  sha256 "dd47d71dd2a526cf6b47cb49af793ec2e26af69a0951cc40e43ae290eacfc34e"
 
   conflicts_with "emacs"
 
   depends_on :autoconf
   depends_on :automake
 
-
   patch :p1 do
-    url "https://gist.github.com/anonymous/8553178/raw/c0ddb67b6e92da35a815d3465c633e036df1a105/emacs.memory.leak.aka.distnoted.patch.diff"
-    sha1 "173ce253e0d8920e0aa7b1464d5635f6902c98e7"
-  end
-
-  patch :p0 do
-    url "http://sourceforge.jp/projects/macemacsjp/svn/view/inline_patch/trunk/emacs-inline.patch?view=co&revision=583&root=macemacsjp"
-    sha1 "61a6f41f3ddc9ecc3d7f57379b3dc195d7b9b5e2"
+    url "https://gist.githubusercontent.com/takaxp/1d91107b311b63b57529/raw/afcdd809e138a08c45a469e30aed9db0685aef3c/emacs-24.5-inline.patch"
+    sha256 "5ab4cca25ab4d12c802b400a4eb0edcc182bbe97f5d203f7a3e69992be7622db"
   end
 
   # Follow MacPorts and don't install ctags from Emacs. This allows Vim
@@ -51,7 +46,6 @@ class MyEmacs < Formula
 
     system "ln -sf Emacs.app ~/Applications"
   end
-
 
   test do
     false
