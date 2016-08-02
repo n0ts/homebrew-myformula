@@ -6,8 +6,8 @@ class MyEmacs < Formula
 
   conflicts_with "emacs"
 
-  depends_on :autoconf
-  depends_on :automake
+  depends_on "autoconf"
+  depends_on "automake"
 
   patch :p1 do
     url "https://gist.githubusercontent.com/takaxp/1d91107b311b63b57529/raw/afcdd809e138a08c45a469e30aed9db0685aef3c/emacs-24.5-inline.patch"
