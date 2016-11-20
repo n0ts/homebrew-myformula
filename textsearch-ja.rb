@@ -1,8 +1,8 @@
 class TextsearchJa < Formula
   homepage 'http://textsearch-ja.projects.pgfoundry.org/textsearch_ja.html'
   head 'https://github.com/oknj/textsearch_ja.git'
-  url 'https://github.com/oknj/textsearch_ja/archive/REL9_3_0_2.zip'
-  sha1 'f2792106465c37894fffa15f25fcb18e6138339d'
+  url 'https://github.com/oknj/textsearch_ja/archive/textsearch_ja-9.6.0.zip'
+  sha256 'bfa537cf193cc43c4bcdcd4314d80a2d5838e99a88ee145e87f371a0c8664f08'
 
   depends_on 'postgresql'
   depends_on 'mecab'
